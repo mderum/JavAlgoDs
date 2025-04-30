@@ -1,0 +1,6 @@
+//       list : [3,2,5,21,8,7,22]
+// result : [8,21]  find the 2nd and third largest number 
+
+ Stream.of(3,2,5,21,8,7,22).sorted(Comparator.reverseOrder()).skip(1).
+ limit(2).forEach(System.out::println);
+
