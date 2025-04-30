@@ -32,4 +32,85 @@
  System.out.println(f);
   System.out.println(s);
  System.out.println(t);
--------------------------------
+-------------------------------------------------------------------------------------------- 
+
+  
+  
+   // find duplicates  [10, 20, 20, 30, 40, 10, 50]
+
+
+//collections 
+  System.out.println( "then-comp-"+
+    Stream.of(10, 20, 20, 30, 40, 10, 50).collect(
+    Collectors.groupingBy(x->x , Collectors.collectingAndThen(Collectors.counting(),
+     x-> x>1)
+    )  ));
+ 
+ 
+
+   System.out.println( 
+    Stream.of(10, 20, 20, 30, 40, 10, 50).collect(
+    Collectors.groupingBy(x->x , Collectors.counting()
+    )  ));
+ 
+   
+   System.out.println(
+       Stream.of(10, 20, 20, 30, 40, 10, 50).collect(
+        
+        Collectors.toMap(x->x , x-> 1 ,  (a,b)-> a+b)
+        )
+     );
+    
+   
+   // loops 
+   		List<Integer> asList = new ArrayList<>(
+   		  Arrays.asList(10, 20, 20, 30, 40, 10, 50,30,30));
+    
+     Iterator<Integer> it = asList.iterator();
+
+   while(it.hasNext()){
+       int num=  it.next();
+       if(asList.indexOf(num) != asList.lastIndexOf(num)){
+         System.out.println("duplicate-found-"+ num);
+         it.remove();
+       }
+     
+   }
+   
+  //loop and save in a list then remove all at once 
+  	List<Integer> originalList = new ArrayList<>(
+   		  Arrays.asList(10, 20, 20, 30, 40, 10, 50));
+    
+   
+   List<Integer> duplicates =   originalList.stream()
+   .filter( x-> originalList.indexOf(x) != originalList.lastIndexOf(x) ).distinct().
+   collect(Collectors.toList());
+   
+   System.out.println(duplicates);
+   System.out.println(originalList.removeAll(duplicates));
+      System.out.println(originalList);
+
+
+// using  sets 
+
+ Set<Integer> seenSet = new HashSet<>();
+
+	List<Integer> l3 = 
+   		  Arrays.asList(10, 20, 20, 30, 40, 10, 50);
+    
+   
+   
+System.out.println(l3.stream().filter(x-> !seenSet.add(x))
+.distinct().collect(Collectors.toList()));
+
+System.out.println(seenSet);
+
+   
+-------------------------------------------------------------------------------------------- 
+   
+   
+
+
+
+
+
