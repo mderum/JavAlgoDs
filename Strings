@@ -24,3 +24,69 @@
 
     System.out.println(    Arrays.stream( "eeevmo o m".split("")).
     collect(Collectors.groupingBy( z -> z ,  Collectors.counting()) ));
+
+
+-----------------------------------
+
+  
+  //find non repeating chars in string
+  
+  String input = "swiss"; 
+  
+  // can use hashmap to keep count 
+  // can use stream -> collet in hmap, use counting() 
+  
+  Map<Character,Integer> hmap = new HashMap<>();
+  
+  for(char c :  input.toCharArray() ){
+    hmap.put(c, hmap.getOrDefault(c,0)+1 );
+    
+  }
+  System.out.println(hmap);
+  for(  Map.Entry<Character,Integer>  entry: hmap.entrySet()){
+          if(entry.getValue()>1){
+            System.out.println("duplicate-"+entry.getKey());
+          }
+  }
+  
+  
+  // using indexOf method
+    for(char c :  input.toCharArray() ){
+   
+   if(input.indexOf(c) == input.lastIndexOf(c)){
+     System.out.println(" non repating -"+c);
+   }
+   
+  }
+  
+  //streams 
+  
+  System.out.println(
+    Arrays.stream(input.split("")).collect(Collectors.groupingBy(x->x , 
+    Collectors.counting()) ) );
+  
+  
+  String []  inputArray = input.split("");
+    System.out.println(
+    Arrays.stream(inputArray) 
+     .collect(Collectors.groupingBy(x->x , 
+    Collectors.counting()) ) );
+  
+  
+  
+  
+      System.out.println(
+    Arrays.stream(inputArray) 
+     .collect(Collectors.groupingBy(x->x , 
+     
+     Collectors.collectingAndThen( Collectors.counting() , 
+     x-> x <= 1
+     )
+     
+     ) ) );
+  
+  
+  
+  
+  
+  
