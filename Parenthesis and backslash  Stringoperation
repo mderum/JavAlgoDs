@@ -1,0 +1,52 @@
+import java.util.Stack;
+
+public class DS_Stac {
+
+	public static void main(String[] args) {
+
+		System.out.println(isParanthesisCool(")((())())"));
+		System.out.println();
+
+		System.out.println(backSlashOp("abc#ef###d"));
+
+	}
+
+	public static boolean isParanthesisCool(String str) {
+
+		Stack<Character> stk = new Stack<>();
+
+		for (char c : str.toCharArray()) {
+
+			if (c == '(') {
+				stk.push(c);
+			} else if (c == ')') {
+				if (stk.isEmpty()) {
+					System.out.println("not cool");
+					return false;
+				}
+				stk.pop();
+			}
+		}
+
+		return stk.isEmpty();
+
+	}
+
+	// abc#ef##d -> abd 1#== 1 backstash
+	public static String backSlashOp(String str) {
+
+		StringBuilder b = new StringBuilder(str);
+
+		for (char c : str.toCharArray()) {
+			if (c == '#') {
+
+				b.replace(b.indexOf("#") - 1, b.indexOf("#") + 1, "");
+			}
+
+		}
+
+		return b.toString();
+
+	}
+
+}
