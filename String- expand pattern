@@ -1,0 +1,17 @@
+  
+  String x = "az3b2c1";
+  
+  for( String c : x.split("") ){
+    
+    
+    if( c.matches("[0-9]")){
+        
+        int num= Integer.parseInt(c);
+        
+        IntStream.range(0,num-1)
+        .forEach( popo-> System.out.print(x.charAt(x.indexOf(c)-1)) );
+      
+    }
+    else{ System.out.print(c);}
+      
+  }  
