@@ -1,0 +1,40 @@
+
+    public static String  longestSubstring(String s) {
+      
+      
+      int leftPane=0;
+      int maxLengthOfSubString=0;
+      int strIndex=0;
+      
+      HashSet<Character>  hs = new HashSet<>();
+      
+      
+      for(int rightPane=0; rightPane< s.length(); rightPane++){
+        
+        
+        char currentChar = s.charAt(rightPane);
+        
+        while(hs.contains(currentChar)){
+          //bacazjakf
+          hs.remove(s.charAt(leftPane));
+          leftPane++;
+          
+        }
+        
+        hs.add(currentChar);
+        
+        if(rightPane -leftPane +1 > maxLengthOfSubString ){
+          
+          maxLengthOfSubString= rightPane - leftPane+1;
+          strIndex =leftPane;
+        }
+        
+        
+        
+      }
+      
+      return s.substring(strIndex,strIndex+maxLengthOfSubString);
+      
+      
+      
+    }
