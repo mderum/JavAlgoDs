@@ -1,0 +1,24 @@
+  public static int removeDuplicates(int[] arr) {
+        int n = arr.length;
+
+        // Outer loop to check each element
+        int index = 0;
+        for (int i = 0; i < n; i++) {
+            boolean isDuplicate = false;
+
+            // Inner loop to check if arr[i] is already in arr[0...index-1]
+            for (int j = 0; j < index; j++) {
+                if (arr[i] == arr[j]) {
+                    isDuplicate = true;
+                    break;
+                }
+            }
+
+            // If not duplicate, put it in the result portion
+            if (!isDuplicate) {
+                arr[index++] = arr[i];
+            }
+        }
+
+        return index; // number of unique elements
+    }
