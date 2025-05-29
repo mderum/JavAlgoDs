@@ -1,0 +1,18 @@
+matrix multiplication  row * column   |  A and B
+n a.length
+p b.length
+m b[0].length
+
+new result [] [] = n m
+
+L: 
+  i  n
+  k  p : 
+          temp [i][k]
+  j  m
+
+result i-j  += temp * B k-j
+
+------------------------------------
+
+
