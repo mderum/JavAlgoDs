@@ -1,0 +1,38 @@
+
+  
+  
+    
+  List<String> strList = List.of("eat","tea","tan","ate","nat","bat");
+  
+  
+  Map<String,List<String>> hmap= new HashMap<>();
+  
+ 
+ for(String str: strList){
+   
+  // String sorted = str.chars()
+  //                   .sorted()
+  //                   .mapToObj(c -> String.valueOf((char) c))
+  //                   .collect(Collectors.joining());   
+  
+     
+  // String sorted =Arrays.stream( str.split(""))
+  //                   .sorted().collect(Collectors.joining());  
+  
+  
+  //faster
+  char[] chars = str.toCharArray();
+  Arrays.sort(chars);
+  String sorted= new String(chars);
+   
+   
+   
+   hmap.computeIfAbsent( sorted , k-> new ArrayList<>()).add(str);
+   
+ }
+ 
+ 
+ System.out.println(hmap);
+ 
+ 
+ 
