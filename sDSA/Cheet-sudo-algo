@@ -67,11 +67,22 @@ r=1
           r= r * A[j]
           
 
+-----------------------------------
+Overlapping intervals [ [],[] ,[] ]
 
+List<int []> res 
 
+L:
+  FE: 
 
+    if: res.Empty ||  res.getLast[1] < interval[0] 
+        add 
 
+    else: 
+        res.getLast[1] .set( max( interval[1], current[1] );
+    
 
+-----------------------------
 
 
 
