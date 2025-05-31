@@ -50,6 +50,22 @@ L:
 
 return sub(s,s+m)
 
+------------------------------------
+array prodcut without divison in O(n)
+A [n]  Res[n]
+
+l=1 
+
+L: 
+  i  A< :  
+          Res[i]=l;
+          l= l * A[i]
+
+r=1
+  j  A> :
+          Res[j]= Res[j] * r
+          r= r * A[j]
+          
 
 
 
