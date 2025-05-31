@@ -14,5 +14,48 @@ L:
 result i-j  += temp * B k-j
 
 ------------------------------------
+max subarray sum X[] 
+
+c X0
+m X0 
+
+L: 
+  i:
+    c = max( X[i], c + X[i] ) 
+    m=  max( c , m )
+
+return m
+
+-------------------------------
+longest substring Str
+
+l 0
+m 0
+s 0 
+
+C Map 
+
+L: 
+  r Str<: 
+    W: Str(r) in C Map 
+        remove at(l)
+        l++
+
+    
+    add in Cmap
+
+    IF(r-l+1 > m ): 
+        m=r-l+1
+        s=m 
+
+return sub(s,s+m)
+
+
+
+
+
+
+
+
 
 
