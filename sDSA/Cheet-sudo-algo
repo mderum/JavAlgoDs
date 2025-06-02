@@ -83,6 +83,23 @@ L:
     
 
 -----------------------------
+longest common prefix in array of string Words[] 
+
+REs = Words[0] 
+
+L: 
+  i  W<:
+        W: Words[i] !startsWith(REs)
+            REs= REs.substring(0, REs.length()-1) 
+
+            IF: REs empty return "" 
+
+
+return 
+
+-------------------------------
+
+
 
 
 
