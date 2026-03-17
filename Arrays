@@ -46,7 +46,8 @@
      x-> x>1)
     )  ));
  
- 
+.groupingBy ( key x->x , mapper how to map ? TreeMap::new, downstream (COllector list/map/ 
+
 
    System.out.println( 
     Stream.of(10, 20, 20, 30, 40, 10, 50).collect(
