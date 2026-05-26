@@ -33,16 +33,16 @@ l 0
 m 0
 s 0 
 
-C Map 
+Char Set 
 
-L: 
-  r Str<: 
-    W: Str(r) in C Map 
-        remove at(l)
+
+Loop:  int i <Str.length() : 
+    W: Set has ( charAt(i) )
+        remove this 
         l++
 
     
-    add in Cmap
+    add in SET
 
     IF(r-l+1 > m ): 
         m=r-l+1
