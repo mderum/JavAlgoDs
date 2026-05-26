@@ -46,7 +46,7 @@ L:
 
     IF(r-l+1 > m ): 
         m=r-l+1
-        s=m 
+        s=l
 
 return sub(s,s+m)
 
