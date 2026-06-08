@@ -27,6 +27,26 @@ L:
 return m
 
 -------------------------------
+
+
+		
+		
+		left, window, start 
+		
+		SET<CHAR>
+		
+		Loop: 
+			Right: 
+				if(char in SET): remove left++;
+		
+			ADD in SET
+			
+			IF(Right - LEFT + 1 > window): window = Right-LEFT+1 , start =left 
+			
+	
+	return .subString(start,start+window);			
+
+
 longest substring Str
 
 l 0
